@@ -1,9 +1,10 @@
-local bernoulli = require("bernoulli")
+local bernoulli = require("distributions/bernoulli")
 local stats = require("common")
-local laplace = require("laplace")
-local i = bernoulli.new(.5)
+local s = require("stats")
+local laplace = require("distributions/laplace")
+local i = s.bernoulli.new(.5)
 print(i:pmf(1)) --> .5
-local l = laplace.new(0,1)
+local l = s.laplace.new(0,1)
 print(l:pdf(0)) --> .5
 print(l:random()) --> .5
 --print(i:quantile(.4)) --> 0

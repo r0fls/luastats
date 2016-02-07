@@ -1,6 +1,6 @@
 stats = require("common")
 local exponential = {}
-exponential.__index = laplace 
+exponential.__index = exponential
 
 function exponential.new(l)
     local self = setmetatable({}, exponential )
