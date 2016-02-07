@@ -1,13 +1,15 @@
+stats = require("common")
 local bernoulli = {}
 bernoulli.__index = bernoulli
-math.randomseed(os.time())
--- on some OSs the first number may not be random
-math.random()
 
 function bernoulli.new(p)
     local self = setmetatable({}, bernoulli )
     self.p = p
     return self
+end
+
+function bernoulli.fit(data)
+    return bernoulli.new(stats.average(data))
 end
 
 function bernoulli.pmf(self, k)
@@ -45,7 +47,8 @@ function bernoulli.quantile(self, x)
 end
 
 function bernoulli.random(self)
-    return self.quantile(self, math.random())
+    return stats.random(self)
+    --return self.quantile(self, math.random())
 end
 
 return bernoulli
