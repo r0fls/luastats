@@ -3,6 +3,8 @@ local stats = require("common")
 local s = require("stats")
 local laplace = require("distributions/laplace")
 local i = s.bernoulli.new(.5)
+local p = s.pareto.new(5,.5)
+print(p:random()) --> .5
 print(i:pmf(1)) --> .5
 local l = s.laplace.new(0,1)
 print(l:pdf(0)) --> .5
