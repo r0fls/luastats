@@ -18,6 +18,7 @@ Clone the repo and put it in your project.
 
 #####Distributions
 - uniform
+- pareto 
 - laplace
 - exponential
 - bernoulli
