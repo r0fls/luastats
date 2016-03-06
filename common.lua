@@ -32,4 +32,33 @@ function stats.median(data)
     end
 end
 
+function stats.counter(data)
+    local cnt = {}
+    for i = 1, #data do
+        if cnt[data[i]] == nil then 
+            cnt[data[i]] = 1
+        else
+            cnt[data[i]] = cnt[data[i]]+1
+        end
+    end
+    return cnt
+end
+
+-- returns the last max if there are ties
+function stats.mode(data)
+    local cnt = {}
+    local max = {nil, 0}
+    for i = 1, #data do
+        if cnt[data[i]] == nil then 
+            cnt[data[i]] = 1
+        else
+            cnt[data[i]] = cnt[data[i]]+1
+        end
+        if cnt[data[i]] > max[2] then
+            max = {data[i], cnt[data[i]]}
+        end
+    end
+    return max 
+end
+
 return stats
