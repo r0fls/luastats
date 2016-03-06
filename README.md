@@ -12,8 +12,9 @@ Clone the repo and put it in your project.
 
 Or fit a random variable from data:
  
+    local s = require("stats")
     local bernoulli_data = {1,1,1,0}
-    local b = bernoulli.fit(bernoulli_data)
+    local b = s.bernoulli.fit(bernoulli_data)
     print(b:pmf(1)) --> .75
     
 
