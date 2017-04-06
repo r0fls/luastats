@@ -1,10 +1,10 @@
 # luastats
 Statistics for lua
 
-###Installation
+### Installation
 Clone the repo and put it in your project.
 
-###Example
+### Example
 ```lua
 local s = require("stats")
 local b = s.bernoulli.new(.3)
@@ -18,12 +18,12 @@ local bernoulli_data = {1,1,1,0}
 local b = s.bernoulli.fit(bernoulli_data)
 print(b:pmf(1)) --> .75
 ```
-###Features
-#####General
+### Features
+##### General
 - Compute the PMF/PDF, CDF, and Quantile of a distribution
 - Fit data to a distribution using the MLE
 
-#####Distributions
+##### Distributions
 - uniform
 - pareto 
 - laplace
